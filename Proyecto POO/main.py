@@ -52,11 +52,12 @@ if __name__ == '__main__':
     print(fotoBuscar,"\n")
     img_original = ImageStorage.leer_imagen("images\imagesM.jpg")
     img_gris = fotoOrig.volver_gris(img_original)
-    img_buscar = ImageStorage.leer_imagen_a('images\imagesCh.jpg')
+    img_buscar = ImageStorage.leer_imagen('images\imagesCh.jpg')
+    img_buscar_g = fotoBuscar.volver_gris(img_buscar)
     img_bordes = fotoOrig.detectando_bordes(img_original)
     #*****MOSTRANDO IMAGENES EN CONSOLA*****
     ShowImages.mostrar_imagen_comparar(img_original,img_bordes)
-    img_rep = fotoOrig.buscar_la_carita(img_original, img_buscar, img_gris)
+    img_rep = fotoOrig.buscar_la_carita(img_original, img_buscar_g, img_gris)
     #*****MOSTRANDO LAS IMAGENES EN PANTALLA*****
     ShowImages.mostrar_imagen(fotoBuscar.formato, img_buscar)
     ShowImages.mostrar_imagen(fotoOrig.formato,img_rep)
